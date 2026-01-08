@@ -6,6 +6,7 @@ import Blimps from './Blimps'
 import Mountain from './Mountain'
 import MountainBorder from './MountainBorder'
 import Roads from './Roads'
+import StreetLights from './StreetLights'
 import FuelStation from './FuelStation'
 import Lighthouse from './Lighthouse'
 import WindFarm from './WindFarm'
@@ -25,6 +26,7 @@ export default function WorldManager() {
         <group>
             {/* Road Network (render first, under everything) */}
             <Roads />
+            <StreetLights />
 
             {/* Airport Complex */}
             <group name="airport">

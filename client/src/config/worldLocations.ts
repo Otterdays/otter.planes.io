@@ -46,32 +46,35 @@ export const WORLD_LOCATIONS: WorldLocation[] = [
     { id: 'downtown', name: 'Downtown', position: [3000, 0, -3000], type: 'landmark', icon: '🏙️', description: 'City skyline with skyscrapers' },
 ]
 
-// Road network nodes for minimap
+// Road network nodes for minimap and 3D rendering
 export const ROAD_NETWORK = [
-    // Main ring road around airport
-    { start: [-200, 0, 200], end: [300, 0, 200] },
-    { start: [300, 0, 200], end: [300, 0, -200] },
-    { start: [300, 0, -200], end: [-200, 0, -200] },
-    { start: [-200, 0, -200], end: [-200, 0, 200] },
+    // === AIRPORT GRID (High Fidelity) ===
+    // Horizontal
+    { start: [-250, 0, 200], end: [300, 0, 200], width: 12 },    // South Perimeter
+    { start: [-250, 0, -180], end: [300, 0, -180], width: 12 },  // North Perimeter
+    { start: [-250, 0, 0], end: [300, 0, 0], width: 10 },        // Center Crossroad
 
-    // Road to lighthouse
-    { start: [-200, 0, 200], end: [-1500, 0, 1500] },
+    // Vertical
+    { start: [-250, 0, -180], end: [-250, 0, 200], width: 12 },  // West Perimeter
+    { start: [300, 0, -180], end: [300, 0, 200], width: 12 },    // East Perimeter
+    { start: [0, 0, -180], end: [0, 0, 200], width: 10 },        // Center Spine
 
-    // Road to wind farm
-    { start: [300, 0, 200], end: [1000, 0, 1500] },
+    // === CONNECTIONS TO LANDMARKS ===
+    // To Crystal Lake (Beach) - Diagonal
+    { start: [-250, 0, 200], end: [-2500, 0, 2500], width: 10 },
 
-    // Road towards mountain
-    { start: [300, 0, -200], end: [2000, 0, -1500] },
+    // To Downtown (City) - Diagonal
+    { start: [300, 0, -180], end: [3000, 0, -3000], width: 10 },
 
-    // Cross roads
-    { start: [0, 0, 200], end: [0, 0, -200] },
-    { start: [-200, 0, 0], end: [300, 0, 0] },
+    // To Mt. Dorp & Radio Towers (North)
+    { start: [0, 0, -180], end: [0, 0, -1500], width: 9 },         // Highway North
+    { start: [0, 0, -1500], end: [2000, 0, -1500], width: 9 },     // To Mt Dorp base
 
-    // Road to Crystal Lake (beach)
-    { start: [-200, 0, 200], end: [-2500, 0, 2500] },
+    // To Lighthouse (West)
+    { start: [-250, 0, 0], end: [-1500, 0, 1500], width: 8 },
 
-    // Road to Downtown (city)
-    { start: [300, 0, -200], end: [3000, 0, -3000] },
+    // To Wind Farm (East)
+    { start: [300, 0, 0], end: [1000, 0, 1500], width: 8 },
 ]
 
 // Utility functions

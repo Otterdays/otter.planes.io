@@ -230,8 +230,9 @@
 .plane-stats {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
 }
 
 .stat-bar {
@@ -241,12 +242,13 @@
 }
 
 .stat-label {
-  width: 80px;
-  font-size: 0.7rem;
+  width: 90px;
+  font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.1em;
   color: #8a8aaa;
   flex-shrink: 0;
+  margin-right: 10px;
 }
 
 .stat-track {

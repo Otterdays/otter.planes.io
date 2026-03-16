@@ -1,4 +1,6 @@
 ## Active Tasks
+- [x] Add GPT Plane (OpenAI-themed AI interceptor, Special category)
+- [x] Fix TypeScript build blockers (unused vars, test setup)
 - [x] Implement semi-realistic physics with AoA and stall
 - [x] Create modular PlaneModel with 3 variants
 - [x] Build plane selection UI
@@ -53,11 +55,11 @@
 _None_
 
 ## Recent Context (last 5 actions)
-1. Created Lake with beach, umbrellas, towels, dock, boat, palm trees (position: -2500, 2500)
-2. Created Downtown with ~50 procedural skyscrapers, central park, fountain, streets (position: 3000, -3000)
-3. Added CloudFog component for immersive fly-through effect (350-850 altitude)
-4. Updated worldLocations.ts with Crystal Lake and Downtown POIs
-5. Upgraded grass texture with real seamless texture + mipmap fix
+1. Added GPT Plane (OpenAI-themed AI interceptor with token ring, emerald circuits)
+2. Fixed TypeScript build: unused imports (VARIANT_COLORS, resolution, get, playerName), test setup `this` typing
+3. Added HUD nearest POI indicator (distance + bearing to closest landmark)
+4. Added Scenic Overlook (hilltop viewpoint at -1200, 1200)
+5. Updated docs (SUMMARY, SCRATCHPAD, CHANGELOG, WORLD_MAP)
 
 ## Compacted History
 - Initial MVP: Flight physics, multiplayer, basic plane model

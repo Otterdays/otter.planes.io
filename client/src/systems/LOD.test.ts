@@ -104,7 +104,7 @@ describe('LOD System', () => {
 describe('LOD Performance', () => {
     it('should be able to process 200+ objects efficiently', () => {
         const objectCount = 200
-        const objects = Array.from({ length: objectCount }, (_, i) => ({
+        const objects = Array.from({ length: objectCount }, () => ({
             position: new THREE.Vector3(
                 Math.random() * 10000 - 5000,
                 Math.random() * 500,

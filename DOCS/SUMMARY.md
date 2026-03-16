@@ -1,8 +1,8 @@
 # Project Status
 
 **Current Phase:** World Expansion & Engineering Improvements  
-**Version:** 0.5.1  
-**Last Updated:** 2026-01-08
+**Version:** 0.5.2  
+**Last Updated:** 2026-03-15
 
 ## Key Milestones
 
@@ -16,7 +16,7 @@
 - [x] HUD with flight data
 - [x] Lobby screen for player names
 - [x] Semi-realistic aerodynamics with stall
-- [x] 10 plane variants with category filtering
+- [x] 12 plane variants with category filtering (incl. GPT Plane, Claude AI)
 - [x] Performance optimizations (60+ FPS, smooth camera, reduced GC)
 - [x] **NEW: World Expansion - 7 new structures**
 - [x] **NEW: Road network connecting landmarks**
@@ -24,6 +24,10 @@
 - [x] **NEW: Unified KeybindManager system**
 - [x] **NEW: Modular plane component architecture**
 - [x] **NEW: Ultimate Plane Builder - 10 part categories, stats system, save/load**
+- [x] **NEW: GPT Plane** (OpenAI-themed AI interceptor, Special category)
+- [x] **NEW: HUD nearest POI indicator** (distance + bearing to closest landmark)
+- [x] **NEW: Scenic Overlook** (hilltop viewpoint between airport and lighthouse)
+- [x] **FIX: TypeScript build** (unused vars, test setup typing)
 
 ## Quick Links
 

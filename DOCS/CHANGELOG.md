@@ -5,6 +5,9 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- **GPT Plane** (Special category): OpenAI-themed AI interceptor with glowing token ring cockpit, emerald circuits, twin engines. Stats: Speed 92, Agility 84, Durability 82.
+- **HUD Nearest POI Indicator**: Shows distance and bearing to closest landmark (e.g. "MT. DORP 2.3km NE"). Throttled updates for performance.
+- **Scenic Overlook** (position: -1200, 0, 1200): Hilltop viewpoint with wooden platform, railing, bench, and telescope. Road connection from airport.
 - **Crystal Lake & Beach Resort** (position: -2500, 2500):
   - Natural organic-shaped lake with reflective water
   - Sandy beach surrounding the lake
@@ -34,6 +37,7 @@ All notable changes to this project will be documented in this file.
   - Smooth transitions entering/exiting clouds
 
 ### Changed
+- **TypeScript Build**: Fixed unused variable/import errors (OtherPlane, Plane, Roads, gameStore, LOD.test, StructureInstancing.test). Fixed test setup `this` typing for getContext mock.
 - **Grass Texture Upgrade**: Real seamless grass texture from Three.js examples (150×150 repeat)
 - **Mipmap Filtering**: LinearMipMapNearestFilter eliminates texture flickering at low altitude
 - **Camera**: Added near plane (1 unit) and snap threshold for stable rendering

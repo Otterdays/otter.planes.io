@@ -1,7 +1,7 @@
 import { useRef, useEffect } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
-import PlaneModel, { PlaneVariant, VARIANT_COLORS } from './PlaneModel'
+import PlaneModel, { PlaneVariant } from './PlaneModel'
 
 interface Player {
   id: string

@@ -1,7 +1,19 @@
 // Plane Model Types and Configuration
 // =====================================
 
-export type PlaneVariant = 'ww2' | 'jet' | 'biplane' | 'boeing747' | 'stealth' | 'interceptor' | 'sopwith' | 'spad' | 'otter' | 'tungtung' | 'claude'
+export type PlaneVariant =
+    | 'ww2'
+    | 'jet'
+    | 'biplane'
+    | 'boeing747'
+    | 'stealth'
+    | 'interceptor'
+    | 'sopwith'
+    | 'spad'
+    | 'otter'
+    | 'tungtung'
+    | 'claude'
+    | 'gpt'
 
 export interface PlaneColors {
     primary: string
@@ -36,6 +48,7 @@ export const VARIANT_COLORS: Record<PlaneVariant, PlaneColors> = {
     otter: { primary: '#8B6914', secondary: '#5C4A1A', accent: '#F5E6C8' },
     tungtung: { primary: '#C4884A', secondary: '#8B5E3C', accent: '#E8C49A' },
     claude: { primary: '#1a1a2e', secondary: '#D97757', accent: '#f5e6d3' },
+    gpt: { primary: '#111817', secondary: '#10a37f', accent: '#d7fff5' },
 }
 
 export const DEFAULT_INPUTS: ControlInputs = {

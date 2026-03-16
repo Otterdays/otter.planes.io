@@ -58,7 +58,6 @@ function RoadSegment({ start, end, width }: { start: number[], end: number[], wi
 function useRoadTexture(length: number, width: number) {
     return useMemo(() => {
         const canvas = document.createElement('canvas')
-        const resolution = 64
         const w = 512 // Length resolution
         const h = 64  // Width resolution
 

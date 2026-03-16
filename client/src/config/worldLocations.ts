@@ -38,6 +38,7 @@ export const WORLD_LOCATIONS: WorldLocation[] = [
 
     // Natural Landmarks
     { id: 'mt_dorp', name: 'MT. DORP', position: [2000, 0, -1500], type: 'nature', icon: '⛰️', description: '400m peak with Hollywood sign' },
+    { id: 'scenic_overlook', name: 'Scenic Overlook', position: [-1200, 0, 1200], type: 'landmark', icon: '🔭', description: 'Hilltop viewpoint with telescope' },
     { id: 'lighthouse', name: 'Lighthouse', position: [-1500, 0, 1500], type: 'landmark', icon: '🏠' },
     { id: 'wind_farm', name: 'Wind Farm', position: [1000, 0, 1500], type: 'landmark', icon: '🌬️' },
     { id: 'lake', name: 'Crystal Lake', position: [-2500, 0, 2500], type: 'nature', icon: '🏖️', description: 'Beach resort with dock' },
@@ -70,8 +71,9 @@ export const ROAD_NETWORK = [
     { start: [0, 0, -180], end: [0, 0, -1500], width: 9 },         // Highway North
     { start: [0, 0, -1500], end: [2000, 0, -1500], width: 9 },     // To Mt Dorp base
 
-    // To Lighthouse (West)
-    { start: [-250, 0, 0], end: [-1500, 0, 1500], width: 8 },
+    // To Lighthouse (West) via Scenic Overlook
+    { start: [-250, 0, 0], end: [-1200, 0, 1200], width: 7 },
+    { start: [-1200, 0, 1200], end: [-1500, 0, 1500], width: 6 },
 
     // To Wind Farm (East)
     { start: [300, 0, 0], end: [1000, 0, 1500], width: 8 },

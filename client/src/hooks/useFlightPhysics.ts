@@ -146,6 +146,17 @@ export const PLANE_CONFIGS: Record<string, PlaneConfig> = {
     yawRate: 2.0,          // Reasonable yaw
     turnTightness: 4.0,    // Can turn okay with arm flaps
   },
+  gpt: {
+    name: 'GPT Plane',
+    maxSpeed: 285,         // Fast AI interceptor
+    acceleration: 82,      // Quick response
+    liftPower: 2.9,        // Good lift from canards and swept wings
+    dragFactor: 0.018,     // Efficient futuristic shape
+    rollRate: 3.6,         // Responsive but stable
+    pitchRate: 3.1,        // Snappy pitch authority
+    yawRate: 1.7,          // Twin fins keep it tidy
+    turnTightness: 4.2,    // Quick iteration through turns
+  },
 }
 
 // =====================================================

@@ -22,6 +22,7 @@ export { InterceptorModel } from './InterceptorModel'
 export { OtterModel } from './OtterModel'
 export { TungTungModel } from './TungTungModel'
 export { ClaudeModel } from './ClaudeModel'
+export { GPTModel } from './GPTModel'
 
 // Default export - main PlaneModel component (still uses original for now)
 // TODO: Migrate main PlaneModel to use these individual exports

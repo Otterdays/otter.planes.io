@@ -2,7 +2,7 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import { useState } from 'react'
 import { useGameStore } from '../store/gameStore'
-import PlaneModel, { PlaneVariant, VARIANT_COLORS } from './PlaneModel'
+import PlaneModel, { PlaneVariant } from './PlaneModel'
 import './PlaneSelection.css'
 
 // Aircraft categories/types
@@ -30,6 +30,7 @@ const PLANE_CATEGORIES: Record<PlaneVariant, PlaneCategory[]> = {
     otter: ['special'],
     tungtung: ['special'],
     claude: ['special'],
+    gpt: ['special'],
 }
 
 const PLANE_INFO: Record<PlaneVariant, { name: string; description: string; stats: { speed: number; agility: number; durability: number } }> = {
@@ -88,9 +89,14 @@ const PLANE_INFO: Record<PlaneVariant, { name: string; description: string; stat
         description: 'Anthropic\'s thinking machine takes to the skies! Neural network glow, thought orbs, and twin stabilizers for maximum safety. Helpful, harmless, and honest... at Mach 2.',
         stats: { speed: 85, agility: 80, durability: 90 },
     },
+    gpt: {
+        name: 'GPT Plane',
+        description: 'A fast-talking AI interceptor with a glowing token ring, emerald circuits, and twin engines built for rapid iteration in the sky.',
+        stats: { speed: 92, agility: 84, durability: 82 },
+    },
 }
 
-const VARIANTS: PlaneVariant[] = ['ww2', 'jet', 'biplane', 'sopwith', 'spad', 'boeing747', 'stealth', 'interceptor', 'otter', 'tungtung', 'claude']
+const VARIANTS: PlaneVariant[] = ['ww2', 'jet', 'biplane', 'sopwith', 'spad', 'boeing747', 'stealth', 'interceptor', 'otter', 'tungtung', 'claude', 'gpt']
 
 function StatBar({ label, value }: { label: string; value: number }) {
     return (
@@ -111,6 +117,7 @@ const PREVIEW_SCALE: Partial<Record<PlaneVariant, number>> = {
     jet: 0.85,
     interceptor: 0.9,
     claude: 0.8,
+    gpt: 0.82,
 }
 
 function PlanePreview({ variant }: { variant: PlaneVariant }) {

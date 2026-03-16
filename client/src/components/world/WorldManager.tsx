@@ -16,6 +16,7 @@ import Helipad from './Helipad'
 import WaterTower from './WaterTower'
 import Lake from './Lake'
 import Downtown from './Downtown'
+import ScenicOverlook from './ScenicOverlook'
 
 // =====================================================
 // WORLD MANAGER - Central hub for all world components
@@ -52,6 +53,7 @@ export default function WorldManager() {
 
             {/* Landmarks */}
             <group name="landmarks">
+                <ScenicOverlook />
                 <Lighthouse />
                 <WindFarm />
             </group>
@@ -75,6 +77,6 @@ export default function WorldManager() {
 export {
     Runway, ControlTower, Terminal, Hangars, Blimps, Mountain, MountainBorder,
     Roads, FuelStation, Lighthouse, WindFarm, WeatherStation, RadioTowers, Helipad, WaterTower,
-    Lake, Downtown
+    Lake, Downtown, ScenicOverlook
 }
 

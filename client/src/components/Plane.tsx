@@ -9,7 +9,7 @@ interface PlaneProps {
   playerName: string
 }
 
-export default function Plane({ playerName }: PlaneProps) {
+export default function Plane({ playerName: _playerName }: PlaneProps) {
   const meshRef = useFlightPhysics()
   const { selectedPlane, controlInputs } = useGameStore()
 

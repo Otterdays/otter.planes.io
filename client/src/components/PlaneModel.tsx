@@ -2,12 +2,13 @@ import { useRef } from 'react'
 import { useFrame } from '@react-three/fiber'
 import * as THREE from 'three'
 import { ClaudeModel } from './planes/ClaudeModel'
+import { GPTModel } from './planes/GPTModel'
 
 // =====================================================
 // PLANE CONFIGURATION TYPES
 // =====================================================
 
-export type PlaneVariant = 'ww2' | 'jet' | 'biplane' | 'boeing747' | 'stealth' | 'interceptor' | 'sopwith' | 'spad' | 'otter' | 'tungtung' | 'claude'
+export type PlaneVariant = 'ww2' | 'jet' | 'biplane' | 'boeing747' | 'stealth' | 'interceptor' | 'sopwith' | 'spad' | 'otter' | 'tungtung' | 'claude' | 'gpt'
 
 export interface PlaneColors {
   primary: string
@@ -45,6 +46,7 @@ const VARIANT_COLORS: Record<PlaneVariant, PlaneColors> = {
   otter: { primary: '#8B6914', secondary: '#5C4A1A', accent: '#F5E6C8' },
   tungtung: { primary: '#C4884A', secondary: '#8B5E3C', accent: '#E8C49A' },
   claude: { primary: '#1a1a2e', secondary: '#D97757', accent: '#f5e6d3' },
+  gpt: { primary: '#111817', secondary: '#10a37f', accent: '#d7fff5' },
 }
 
 const DEFAULT_INPUTS: ControlInputs = {
@@ -2062,6 +2064,8 @@ export default function PlaneModel({
       return <TungTungModel colors={finalColors} inputs={inputs} />
     case 'claude':
       return <ClaudeModel colors={finalColors} inputs={inputs} />
+    case 'gpt':
+      return <GPTModel colors={finalColors} inputs={inputs} />
     case 'ww2':
     default:
       return <WW2Model colors={finalColors} inputs={inputs} />

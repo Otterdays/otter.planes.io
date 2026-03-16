@@ -152,7 +152,7 @@ describe('Structure Instancing', () => {
             const material = new THREE.MeshStandardMaterial({ color: '#666666' })
             const mesh = new THREE.InstancedMesh(geometry, material, instanceCount)
 
-            const instances: InstanceData[] = Array.from({ length: instanceCount }, (_, i) => ({
+            const instances: InstanceData[] = Array.from({ length: instanceCount }, () => ({
                 position: [
                     Math.random() * 10000 - 5000,
                     Math.random() * 500,

@@ -1,8 +1,10 @@
+import { useMemo } from 'react'
 import { useGameStore } from '../store/gameStore'
+import { getNearestLocation } from '../config/worldLocations'
 import './HUD.css'
 
 export default function HUD() {
-  const { flightData } = useGameStore()
+  const { flightData, planePosition } = useGameStore()
   const { speed, altitude, heading, throttle, angleOfAttack, gForce, isStalling } = flightData
 
   // Format heading with leading zeros
@@ -13,6 +15,19 @@ export default function HUD() {
     const dirs = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW']
     return dirs[Math.round(hdg / 45) % 8]
   }
+
+  // Nearest POI (distance + bearing) - memoized per position
+  const nearestPOI = useMemo(() => {
+    const pos: [number, number, number] = [planePosition.x, planePosition.y, planePosition.z]
+    const loc = getNearestLocation(pos)
+    if (!loc) return null
+    const dx = loc.position[0] - pos[0]
+    const dz = loc.position[2] - pos[2]
+    const dist = Math.sqrt(dx * dx + dz * dz)
+    const bearing = (Math.atan2(dx, -dz) * (180 / Math.PI) + 360) % 360
+    const distStr = dist >= 1000 ? `${(dist / 1000).toFixed(1)}km` : `${Math.round(dist)}m`
+    return { name: loc.name, dist: distStr, dir: getCompassDir(bearing) }
+  }, [planePosition.x, planePosition.z])
 
   return (
     <div className="hud">
@@ -84,6 +99,15 @@ export default function HUD() {
           </div>
         </div>
       </div>
+
+      {/* Nearest POI */}
+      {nearestPOI && (
+        <div className="hud-panel hud-nearest-poi">
+          <span className="poi-label">NEAREST</span>
+          <span className="poi-value">{nearestPOI.name}</span>
+          <span className="poi-dist">{nearestPOI.dist} {nearestPOI.dir}</span>
+        </div>
+      )}
 
       {/* Bottom - Controls Hint */}
       <div className="hud-controls-hint">

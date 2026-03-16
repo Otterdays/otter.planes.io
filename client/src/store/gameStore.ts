@@ -78,7 +78,7 @@ interface GameState {
   setFps: (fps: number) => void
 }
 
-export const useGameStore = create<GameState>((set, get) => ({
+export const useGameStore = create<GameState>((set) => ({
   // Connection
   socket: null,
   setSocket: (socket) => set({ socket }),

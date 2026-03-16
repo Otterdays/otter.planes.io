@@ -63,11 +63,15 @@ class MockWebGLRenderingContext {
 
 // Mock canvas getContext - use type assertion to bypass strict typing
 const originalGetContext = HTMLCanvasElement.prototype.getContext
-HTMLCanvasElement.prototype.getContext = function (contextType: string, ...args: unknown[]) {
+HTMLCanvasElement.prototype.getContext = function (
+    this: HTMLCanvasElement,
+    contextType: string,
+    ...args: unknown[]
+) {
     if (contextType === 'webgl' || contextType === 'webgl2' || contextType === 'experimental-webgl') {
         return new MockWebGLRenderingContext() as unknown as RenderingContext
     }
-    return originalGetContext.call(this, contextType as '2d', ...args)
+    return originalGetContext.call(this, contextType as never, ...(args as []))
 } as typeof HTMLCanvasElement.prototype.getContext
 
 // Mock requestAnimationFrame

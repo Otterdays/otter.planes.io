@@ -76,6 +76,31 @@
   align-items: flex-end;
 }
 
+.hud-nearest-poi {
+  left: 1rem;
+  top: 1rem;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.poi-label {
+  font-size: 0.55rem;
+  opacity: 0.5;
+  letter-spacing: 0.15em;
+}
+
+.poi-value {
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.poi-dist {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
 /* ===== THROTTLE GAUGE ===== */
 .throttle-gauge {
   display: flex;

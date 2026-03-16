@@ -39,8 +39,8 @@
         ║  ║     └────────────────────────┘      ║  ║
         ║  ║                                     ║  ║
         ║  ║                                     ║  ║
-        ║  ║ 🏠 LIGHTHOUSE      🌬️ WIND FARM    ║  ║
-        ║  ║ (-1500,+1500)      (+1000,+1500)    ║  ║
+        ║  ║ 🔭 OVERLOOK  🏠 LIGHTHOUSE  🌬️ WIND ║  ║
+        ║  ║ (-1200,+1200) (-1500,+1500) (+1000) ║  ║
         ║  ║                                     ║  ║
         ║  ╚═════════════════════════════════════╝  ║
         ║              ⛰️ MOUNTAIN RING ⛰️           ║
@@ -70,6 +70,7 @@
 | Location | Position (X, Y, Z) | Icon | Description |
 |----------|-------------------|------|-------------|
 | MT. DORP | [2000, 0, -1500] | ⛰️ | Main mountain, ~400m, Hollywood sign |
+| Scenic Overlook | [-1200, 0, 1200] | 🔭 | Hilltop viewpoint, telescope, bench |
 | Mountain Border | r=10,000 | 🏔️ | 168 peaks, 3 concentric rings |
 
 ### 🎈 Atmospheric Objects
@@ -147,8 +148,11 @@ Snow Cap: Peaks > 550m or 40% random
 - [x] Helipad (80, 0, 40) - Landing pad with parked helicopter
 - [x] Water Tower (200, 0, 100) - Classic sphere tower with "OTTER CITY"
 - [x] Road Network - Connecting all major landmarks
+- [x] Crystal Lake (-2500, 2500) - Beach resort with dock, umbrellas, volleyball
+- [x] Downtown (3000, -3000) - City skyline with Otter City Tower
+- [x] Scenic Overlook (-1200, 1200) - Hilltop viewpoint with telescope and bench
 
 ---
 
-*Last Updated: 2026-01-07*
+*Last Updated: 2026-03-15*
 *Cartographer: Antigravity AI*

@@ -1,8 +1,12 @@
+<!-- PRESERVATION RULE: Never delete or replace content. Append or annotate only. -->
+
 # Project Status
 
 **Current Phase:** World Expansion & Engineering Improvements  
 **Version:** 0.5.2  
-**Last Updated:** 2026-03-15
+**Last Updated:** 2026-03-19
+
+[AMENDED 2026-03-19]: Docs refreshed (SUMMARY, SBOM, SCRATCHPAD, CHANGELOG); root `npm test`; client Vitest suite extended (`worldLocations` tests) and stabilized timing assertions; README + MIT `LICENSE` for GitHub landing.
 
 ## Key Milestones
 
@@ -28,6 +32,8 @@
 - [x] **NEW: HUD nearest POI indicator** (distance + bearing to closest landmark)
 - [x] **NEW: Scenic Overlook** (hilltop viewpoint between airport and lighthouse)
 - [x] **FIX: TypeScript build** (unused vars, test setup typing)
+- [x] **NEW: Structure instancing + LOD** (see CHANGELOG); Vitest coverage for systems + `worldLocations`
+- [x] **Crystal Lake & Downtown** districts (CHANGELOG [Unreleased])
 
 ## Quick Links
 
@@ -82,6 +88,7 @@
 
 ## Next Steps
 
+- [x] Vitest suite: 35+ tests (LOD, instancing, performance budgets, `worldLocations`) — run `npm test` from repo root
 - [ ] Test multiplayer with multiple clients
 - [ ] Complete PlaneModel.tsx splitting (~200 lines per file)
 - [ ] Implement LOD for distant structures

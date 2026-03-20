@@ -1,4 +1,8 @@
+<!-- PRESERVATION RULE: Never delete or replace content. Append or annotate only. -->
+
 # Security Bill of Materials (SBOM)
+
+[AMENDED 2026-03-19]: Documented client test tooling (Vitest 4, Testing Library, jsdom) aligned with `client/package.json`. Run `npm audit` in `client/` and `server/` before release.
 
 ## Client Dependencies
 
@@ -22,6 +26,11 @@
 | @vitejs/plugin-react | ^4.3.1 | 2025-01-27 | ✅ Clean | Vite React plugin |
 | typescript | ^5.5.3 | 2025-01-27 | ✅ Clean | TypeScript compiler |
 | vite | ^5.4.0 | 2025-01-27 | ✅ Clean | Build tool |
+| vitest | ^4.0.16 | 2026-03-19 | ✅ Clean | Unit / perf-style tests |
+| @vitest/ui | ^4.0.16 | 2026-03-19 | ✅ Clean | Optional Vitest UI |
+| @testing-library/react | ^16.3.1 | 2026-03-19 | ✅ Clean | Component testing (setup) |
+| @testing-library/jest-dom | ^6.9.1 | 2026-03-19 | ✅ Clean | DOM matchers |
+| jsdom | ^27.4.0 | 2026-03-19 | ✅ Clean | Vitest DOM environment |
 
 ## Server Dependencies
 

@@ -110,4 +110,3 @@ if (typeof globalThis.IntersectionObserver === 'undefined') {
     } as unknown as typeof IntersectionObserver
 }
 
-console.log('✅ Test setup complete')

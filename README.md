@@ -1,152 +1,158 @@
 <div align="center">
 
-# 🛩️ Otter Planes IO
-### The Open Source Browser Flight Simulator
+```
+   __ _  _   _  _ __ ___  
+  / _` || | | || '_ ` _ \ 
+ | (_| || |_| || | | | | |
+  \__,_| \__,_||_| |_| |_|   planes.io
+```
 
-![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?logo=typescript&logoColor=white)
-![Three.js](https://img.shields.io/badge/Three.js-R3F-black?logo=three.js&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-Fast-646CFF?logo=vite&logoColor=white)
+# Otter Planes IO
 
-<br />
+**Multiplayer-ready 3D flight playground in the browser** — React, Three.js, and a Node/Socket.io backend. Fly curated aircraft, explore a huge world, or build your own plane in the **Ultimate Plane Builder**.
 
-**Otter Planes IO** is a next-generation browser MMO flight simulator. We combine the accessibility of web technologies with the depth of a desktop simulator. Build your own aircraft, master realistic aerodynamics, and fly with friends in a persistent 3D world.
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Node](https://img.shields.io/badge/node-%3E%3D18-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
+[![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Three.js](https://img.shields.io/badge/Three.js-R3F-000000?logo=three.js&logoColor=white)](https://threejs.org/)
+[![Vitest](https://img.shields.io/badge/tests-Vitest-6E9F18?logo=vitest&logoColor=white)](https://vitest.dev/)
 
-[Features](#-key-features) •
-[Getting Started](#-getting-started) •
-[Controls](#-flight-manual) •
-[Tech Stack](#-technology) •
-[Roadmap](#-roadmap)
+[Features](#features) · [Screenshots](#screenshots) · [Quick start](#quick-start) · [Controls](#controls) · [Tests](#tests) · [Tech stack](#tech-stack) · [Docs](#project-documentation) · [Roadmap](#roadmap)
 
 </div>
 
 ---
 
-## 🌟 Key Features
+## Features
 
-### 🛠️ Ultimate Plane Builder
-Design your aircraft from the fuselage up.
-- **60+ Modular Parts**: Engines, wings, cockpits, and landing gear.
-- **Real-time Physics**: Your design choices affect weight, drag, and lift centers.
-- **Live Preview**: See your creation evolve in 3D before you fly.
-- **Save & Share**: Copy designs to clipboard and share with friends.
-- **Undo/Redo**: Full history support for your engineering experiments.
-
-### ✈️ Massive Hangar (10+ Variants)
-Fly a diverse fleet of aircraft:
-- **Classic**: Sopwith Camel, SPAD XIII, Fokker Dr.I.
-- **Modern**: F-22 Raptor, B-2 Spirit, Boeing 747.
-- **Special**: 
-  - 🦦 **Otter One**: Our mascot plane with wagging tail dynamics.
-  - 🥁 **Tung Tung Air**: The meme legend, powered by spinning bat technology.
-  - 🧠 **Claude AI**: Neural-network aesthetic interceptor.
-
-### 🌍 Expansive Open World
-- **30km² Map**: From the skyscrapers of **Downtown** to the peaks of **Mt. Dorp**.
-- **Dynamic Environment**: Volumetric cloud fog, time of day, and atmospheric scattering.
-- **Locations**: Crystal Lake beach, International Airport, hidden easter eggs.
-- **Traffic**: (Coming Soon) AI traffic on roads and airways.
-
-### 🎮 Gameplay Modes
-- **Single Player**: Free flight and exploration with pause capability.
-- **Multiplayer**: Real-time synchronization for formation flying and dogfights.
-- **HUD**: Professional flight instruments (AoA, G-Force, Mach, Altitude).
-
-### ⚡ Performance Core
-- **Optimized Engine**: Frame-rate independent physics and camera smoothing.
-- **Object Pooling**: Zero-garbage collection overhead during flight.
-- **LOD System**: High-fidelity visuals with solid 60fps performance on standard hardware.
+| | |
+| :--- | :--- |
+| **Ultimate Plane Builder** | 10 part categories, 60+ parts, live stats, save/load, clipboard share, undo/redo |
+| **Hangar** | WWI biplanes, jets, civil aircraft, specials (Otter One, Tung Tung Air, GPT & Claude-themed craft, and more) |
+| **World** | ~30k terrain span, airport, roads, lake resort, downtown skyline, wind farm, lighthouse, minimap (M / U) |
+| **Flight model** | Semi-realistic lift, AoA, stall, continuous throttle, HUD with instruments |
+| **Modes** | Single-player (pause) and multiplayer sync via Socket.io |
+| **Performance** | Instancing, LOD, throttled state/network updates, pooled math objects |
 
 ---
 
-## 🚀 Getting Started
+## Screenshots
 
-### Prerequisites
-- Node.js 18+
-- npm (or yarn/pnpm)
+> There is no `assets/` gallery in-repo yet. Add `docs/screenshots/` (or GitHub-uploaded images) and link them here for a richer landing page.
 
-### installation
+---
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/yourusername/otter-planes-io.git
-   cd otter-planes-io
-   ```
+## Quick start
 
-2. **Launch Everything** (Windows)
-   Simply run the automated launch script:
-   ```bash
-   launch.bat
-   ```
+**Requirements:** Node.js **18+** and npm.
 
-### Manual Setup
+### One command (Windows)
 
-If you prefer to run services manually:
+From the repo root:
 
-**Client**
+```bat
+launch.bat
+```
+
+This installs client/server deps if needed, starts **client** on [http://localhost:3000](http://localhost:3000) and **server** on port **3001**, then opens the game in your browser.
+
+### Manual
+
 ```bash
+# Terminal 1 — game UI
 cd client
 npm install
 npm run dev
-```
 
-**Server**
-```bash
+# Terminal 2 — multiplayer backend
 cd server
 npm install
 npm run dev
 ```
 
-Visit `http://localhost:3000` to take flight.
+**Clone this repo**
+
+```bash
+git clone https://github.com/Otterdays/otter.planes.io.git
+cd otter.planes.io
+```
 
 ---
 
-## 🕹️ Flight Manual
+## Controls
 
-<div align="center">
+| Action | Keys |
+| :--- | :---: |
+| Throttle up / brake | `Shift` / `Ctrl` |
+| Pitch | `W` / `S` |
+| Roll | `A` / `D` |
+| Yaw | `Q` / `E` |
+| Free camera | Hold `RMB` + drag |
+| Reset | `R` |
+| Minimap | `M` (fullscreen), `U` (size cycle) |
 
-| Action | Key | Description |
-| :--- | :---: | :--- |
-| **Throttle** | `Shift` / `Ctrl` | Accelerate (Hold `Shift`) / Brake or Reverse (Hold `Ctrl`) |
-| **Pitch** | `W` / `S` | Pitch Down / Pitch Up |
-| **Roll** | `A` / `D` | Roll Left / Roll Right |
-| **Yaw** | `Q` / `E` | Rudder Left / Rudder Right |
-| **Camera** | `RMB` + Drag | Free look around the aircraft |
-| **Reset** | `R` | Reset aircraft position (if crashed) |
-
-</div>
-
-> **Pro Tip**: To turn smoothly, **bank** with A/D and then **pull up** with S. This uses your wing's lift to pull you through the turn, just like a real plane!
+**Tip:** Coordinate turns with roll (`A`/`D`) then pull (`S`) so lift pulls you through the turn.
 
 ---
 
-## 💻 Technology
+## Tests
 
-This project validates that complex 3D games can live natively in the browser.
+```bash
+# From repository root (runs client Vitest)
+npm test
 
-| Domain | Tech |
+# Or inside client/
+cd client && npm test
+```
+
+```bash
+npm run test:watch    # watch mode
+npm run test:coverage # coverage (see vite.config.ts include paths)
+```
+
+The suite covers **world/POI config**, **LOD heuristics**, **instancing helpers**, and **performance budgets** (35+ tests).
+
+---
+
+## Tech stack
+
+| Layer | Choice |
 | :--- | :--- |
-| **Frontend** | React 18, Zustand, styled-components |
-| **3D Engine** | React Three Fiber (Three.js), Drei |
-| **Language** | TypeScript (Strict Mode) |
-| **Build Tool** | Vite |
-| **Backend** | Node.js, Socket.io |
-| **Testing** | Vitest, React Testing Library |
+| UI | React 18, Zustand, component-scoped CSS |
+| 3D | React Three Fiber, Drei, Three.js |
+| Tooling | TypeScript (strict), Vite 5 |
+| Realtime | Socket.io (client + Express server) |
+| Tests | Vitest, jsdom, Testing Library |
 
 ---
 
-## 🗺️ Roadmap
+## Project documentation
 
-- [x] Core Flight Physics
-- [x] Plane Builder Demo
-- [x] Multiplayer Synchronization
-- [ ] **Advanced Road System**: Grid-based generation with traffic.
-- [ ] **Weather System**: Volumetric clouds and rain.
-- [ ] **Missions**: Checkpoint races and cargo delivery.
+Internal engineering notes live under **`DOCS/`**:
+
+- [`DOCS/SUMMARY.md`](DOCS/SUMMARY.md) — status and milestones  
+- [`DOCS/ARCHITECTURE.md`](DOCS/ARCHITECTURE.md) — system overview  
+- [`DOCS/CHANGELOG.md`](DOCS/CHANGELOG.md) — release history  
+
+---
+
+## Roadmap
+
+- [x] Core flight physics and HUD  
+- [x] Large world + roads + major POIs  
+- [x] Plane Builder with save/load  
+- [x] Multiplayer synchronization  
+- [ ] Richer road/traffic simulation  
+- [ ] Weather (rain, storms) layered on existing clouds/fog  
+- [ ] Missions (races, checkpoints, delivery)  
 
 ---
 
 <div align="center">
-Built with ❤️ by the Otter Planes Team.
+
+**MIT License** — see [`LICENSE`](LICENSE).
+
+Built for the joy of low-altitude joyrides and ridiculous aircraft.
+
 </div>

@@ -190,13 +190,7 @@ describe('Structure Instancing', () => {
             const individualMemory = count * (1 + 1 + 16 * 4) // geometry ref + material ref + matrix
             const totalIndividual = individualMemory / 1024 // KB
 
-            // Instanced should use less memory
-            // (In reality, the savings are much larger due to geometry/material duplication)
-            console.log(`Instanced: ~${totalInstanced.toFixed(2)}KB for matrices`)
-            console.log(`Individual: ~${totalIndividual.toFixed(2)}KB base overhead`)
-
-            // This is a conceptual test - actual savings include avoiding geometry duplication
-            expect(true).toBe(true)
+            expect(totalInstanced).toBeLessThan(totalIndividual)
         })
     })
 })
@@ -216,8 +210,6 @@ describe('Mountain Border Instancing', () => {
 
         expect(afterDrawCalls).toBeLessThan(10)
         expect(reduction).toBeGreaterThan(99) // 99%+ reduction
-
-        console.log(`Draw call reduction: ${beforeDrawCalls} → ${afterDrawCalls} (${reduction.toFixed(1)}% reduction)`)
     })
 })
 
@@ -233,8 +225,6 @@ describe('Wind Farm Instancing', () => {
         const closeDrawCalls = 3 * partsPerTurbine
         const farDrawCalls = 4 * 3 // Simplified: tower, nacelle, static blade disk, light
         const afterDrawCalls = closeDrawCalls + farDrawCalls
-
-        console.log(`Wind Farm: ${beforeDrawCalls} base → ${afterDrawCalls} with LOD`)
 
         expect(afterDrawCalls).toBeLessThan(beforeDrawCalls)
     })

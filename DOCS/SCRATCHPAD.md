@@ -1,3 +1,12 @@
+<!-- PRESERVATION RULE: Never delete or replace content. Append or annotate only. -->
+
+## 2026-03-19 — Docs, tests, README
+- [x] Root `package.json` scripts: `npm test`, `test:watch`, `test:coverage` → client Vitest
+- [x] Added `client/src/config/worldLocations.test.ts` (6 cases: bounds, POIs, roads, helpers)
+- [x] Reduced Vitest console noise; relaxed micro-benchmark thresholds for CI/slow hosts
+- [x] README overhaul + MIT `LICENSE`; `vite.config` coverage includes `src/config/**`
+- [x] SUMMARY / SBOM / SCRATCHPAD / CHANGELOG updated
+
 ## Active Tasks
 - [x] Add GPT Plane (OpenAI-themed AI interceptor, Special category)
 - [x] Fix TypeScript build blockers (unused vars, test setup)
@@ -42,7 +51,7 @@
   - [x] MAJOR PlaneBuilder upgrade: 10 part categories, stats system, save/load, premium UI
   - [x] Implement Structure Instancing for world objects
   - [x] Add LOD (Level of Detail) system for distant structures
-  - [x] Create optimization test suite (29 tests, 100% pass)
+  - [x] Create optimization test suite (35+ tests, `npm test` from repo root)
 - [x] **PlaneBuilder Feature Enhancements (Session 2026-01-08):**
   - [x] Spinning propeller animation (2-blade and 6-blade turboprop)
   - [x] Undo/Redo system with keyboard shortcuts (Ctrl+Z/Y, 50 step history)
@@ -55,11 +64,13 @@
 _None_
 
 ## Recent Context (last 5 actions)
-1. Added GPT Plane (OpenAI-themed AI interceptor with token ring, emerald circuits)
-2. Fixed TypeScript build: unused imports (VARIANT_COLORS, resolution, get, playerName), test setup `this` typing
-3. Added HUD nearest POI indicator (distance + bearing to closest landmark)
-4. Added Scenic Overlook (hilltop viewpoint at -1200, 1200)
-5. Updated docs (SUMMARY, SCRATCHPAD, CHANGELOG, WORLD_MAP)
+1. Docs/tests/README: root `npm test`, `worldLocations` Vitest, quieter benchmarks, README + LICENSE (2026-03-19)
+2. GPT Plane (OpenAI-themed interceptor); HUD nearest POI; Scenic Overlook (-1200, 1200); TS build fixes (2026-03-15)
+3. Crystal Lake beach + Downtown skyline + CloudFog fly-through; worldLocations / roads updates
+4. Structure instancing + LOD + optimization Vitest suite
+5. PlaneBuilder upgrades (undo/redo, clipboard, compatibility warnings)
+
+_See compacted history for older milestones._
 
 ## Compacted History
 - Initial MVP: Flight physics, multiplayer, basic plane model
